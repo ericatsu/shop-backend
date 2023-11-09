@@ -8,6 +8,7 @@ module.exports = {
         await newProduct.save();
         res.status(200).json("Product created successfully");
       } catch (error) {
+        console.error(error);
         res.status(500).json("Failed to create product");
       }
     },
@@ -17,6 +18,7 @@ module.exports = {
             const products = await Product.find().sort({ createdAt: -1})
             res.status(200).json(products)
         } catch (error) {
+            console.error(error);
             res.status(500).json("No products available");
         }
     },
@@ -26,6 +28,7 @@ module.exports = {
           const product = await Product.findById(req.params.id)
           res.status(200).json(product)
        } catch (error) {
+        console.error(error);
         res.status(500).json("Product not available");
        }
     },

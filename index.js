@@ -13,5 +13,4 @@ app.use(express.urlencoded({limit: '10mb', extended: true}));
 
 app.use('/api/products', productRouter);
 
-//TODO: 2:58:19
 app.listen(process.env.PORT || port, () => console.log(`Example app listening on port ${process.env.PORT}!`))
